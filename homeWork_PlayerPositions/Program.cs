@@ -12,11 +12,12 @@ namespace homeWork_PlayerPositions
         {
             int palyerPositionX = 5;
             int playerPositionY = 5;
+            char symbolPlayer = '@';
 
-            Player player = new Player(palyerPositionX, playerPositionY);
+            Player player = new Player(palyerPositionX, playerPositionY, symbolPlayer);
             Painter painter = new Painter();
 
-            painter.Paint(player.PositionX, player.PositionY);
+            painter.PrintPlayer(player.PositionX, player.PositionY,player.SymbolPlayer);
             Console.ReadKey();
         }
     }
@@ -25,19 +26,22 @@ namespace homeWork_PlayerPositions
     {
         public int PositionX { get; private set; }
         public int PositionY { get; private set; }
-        public Player(int positionX, int positionY)
+        public char SymbolPlayer { get; private set; }
+
+        public Player(int positionX, int positionY, char symbolPlayer)
         {
             PositionX = positionX;
             PositionY = positionY;
+            SymbolPlayer = symbolPlayer;
         }
     }
 
     class Painter 
     {
-        public void Paint(int positionX, int positionY, char drawSymbol = '@') 
+        public void PrintPlayer(int positionX, int positionY, char symbolPalyer) 
         {
             Console.SetCursorPosition(positionY, positionX);
-            Console.Write(drawSymbol);
+            Console.Write(symbolPalyer);
         }
     }
 }
