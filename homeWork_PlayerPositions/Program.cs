@@ -12,7 +12,7 @@ namespace homeWork_PlayerPositions
         {
             int palyerPositionX = 5;
             int playerPositionY = 5;
-            char skin = '@';
+            char skin = '*';
 
             Player player = new Player(palyerPositionX, playerPositionY, skin);
             Painter painter = new Painter();
